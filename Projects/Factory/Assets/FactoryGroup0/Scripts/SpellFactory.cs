@@ -4,10 +4,10 @@ using UnityEngine;
 
 namespace Arcanum
 {
-    public enum Spells { Fireball, BlackHole, Meteor}
+    public enum Spells { Explosion, BlackHole, Meteor}
 
     [RequireComponent(typeof(BlackHoleMaker))]
-    [RequireComponent(typeof(FireballMaker))]
+    [RequireComponent(typeof(ExplosionMaker))]
     public class SpellFactory : MonoBehaviour
     {
         public void BuildSpell(Spells type)
@@ -17,9 +17,9 @@ namespace Arcanum
                 var blackHole = this.GetComponent<BlackHoleMaker>().Make();
                 blackHole.transform.position = this.transform.position;
             }
-            else if (Spells.Fireball == type)
+            else if (Spells.Explosion == type)
             {
-                var fireball = this.GetComponent<FireballMaker>().Make();
+                var fireball = this.GetComponent<ExplosionMaker>().Make();
                 fireball.transform.position = this.transform.position;
             }
             else if (Spells.Meteor == type)
@@ -38,7 +38,7 @@ namespace Arcanum
             }
             else if(Input.GetButtonDown("Fire1"))
             {
-                this.BuildSpell(Spells.Fireball);
+                this.BuildSpell(Spells.Explosion);
             }
             else if (Input.GetButtonDown("Fire2"))
             {
