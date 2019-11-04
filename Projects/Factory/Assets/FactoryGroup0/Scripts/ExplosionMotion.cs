@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class FireballMotion : MonoBehaviour
+public class ExplosionMotion : MonoBehaviour
 {
     [SerializeField] private float Speed = 5.0f;
 
