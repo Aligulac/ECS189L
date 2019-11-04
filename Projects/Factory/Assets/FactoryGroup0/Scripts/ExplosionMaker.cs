@@ -1,8 +1,9 @@
-﻿using System.Collections;
+﻿using SJA;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-namespace Arcanum
+namespace SJA
 {
     public class ExplosionMaker : MonoBehaviour, IFactorySpell
     {
@@ -14,7 +15,7 @@ namespace Arcanum
 
         public GameObject Make()
         {
-            GameObject newGameObject = Instantiate(this.prefab, this.gameObject.transform);
+            GameObject newGameObject = Instantiate(prefab, gameObject.transform);
             return newGameObject;
         }
     }

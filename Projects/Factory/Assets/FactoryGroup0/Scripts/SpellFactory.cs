@@ -1,8 +1,9 @@
-﻿using System.Collections;
+﻿using SJA;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-namespace Arcanum
+namespace SJA
 {
     public enum Spells { Explosion, BlackHole, Meteor}
 
@@ -31,8 +32,9 @@ namespace Arcanum
             }
             else if (Spells.Meteor == type)
             {
-                var fireball = this.GetComponent<MeteorMaker>().Make();
-                fireball.transform.position = this.transform.position;
+                var meteor = this.GetComponent<MeteorMaker>().Make();
+                meteor.transform.position = new Vector3(this.transform.position.x,
+                        this.transform.position.y- 1.0f , this.transform.position.z);
             }
         }
 

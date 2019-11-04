@@ -22,13 +22,10 @@ public class MeteorMotion : MonoBehaviour
 
     void OnCollisionEnter(Collision col)
     {
-        if (firsthit == true)
-        {
+
             Debug.Log(gameObject.name + " was Collided with" + col.gameObject.name);
             Instantiate(this.prefab, this.gameObject.transform.position, Quaternion.identity);
             Destroy(this.gameObject);
-        }
 
-        firsthit = true;
     }
 }

@@ -1,8 +1,9 @@
-﻿using System.Collections;
+﻿using SJA;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-namespace Arcanum
+namespace SJA
 {
     public class BlackHoleMaker : MonoBehaviour, IFactorySpell
     {
@@ -16,7 +17,7 @@ namespace Arcanum
         public GameObject Make()
         {
             Debug.Log("here");
-            GameObject newGameObject = (GameObject)Instantiate(this.prefab);
+            GameObject newGameObject = Instantiate(prefab);
             return newGameObject;
         }
     }
