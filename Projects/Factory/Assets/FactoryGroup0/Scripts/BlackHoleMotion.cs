@@ -10,7 +10,7 @@ public class BlackHoleMotion : MonoBehaviour
     [SerializeField]
     private float FloatStrenght =1;
     [SerializeField]
-    private float LifeTime = 5.0f;
+    private float LifeTime = 2.0f;
     private float timeCounter;
     void Start()
     {
@@ -28,7 +28,7 @@ public class BlackHoleMotion : MonoBehaviour
         }
         else
         {
-            if (timeCounter >= 1.5f *LifeTime)
+            if (timeCounter >= 1.5f *LifeTime )
             {
                 Destroy(this.gameObject);
             }
@@ -36,10 +36,10 @@ public class BlackHoleMotion : MonoBehaviour
             {
                 var x = 2 / LifeTime * Time.deltaTime;
                 tf.localScale -= new Vector3(x, x, x);
-                FloatStrenght -= x;
+                //FloatStrenght -= x;
             }
         }
-        rd.AddForce(-1 * rd.mass * Physics.gravity / 2 * FloatStrenght);
+        rd.AddForce(-1 * Physics.gravity * FloatStrenght * Time.deltaTime,ForceMode.Impulse);
         timeCounter += Time.deltaTime;
     }
 }

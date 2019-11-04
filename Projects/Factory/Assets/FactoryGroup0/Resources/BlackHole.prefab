@@ -111,7 +111,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   FloatStrenght: 1
-  LifeTime: 3
+  LifeTime: 2
 --- !u!114 &6158834696308890983
 MonoBehaviour:
   m_ObjectHideFlags: 0
