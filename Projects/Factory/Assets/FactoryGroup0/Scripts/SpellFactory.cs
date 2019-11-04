@@ -14,8 +14,15 @@ namespace Arcanum
         {
             if(Spells.BlackHole == type)
             {
-                var blackHole = this.GetComponent<BlackHoleMaker>().Make();
-                blackHole.transform.position = this.transform.position;
+                var collection = GameObject.FindGameObjectsWithTag("BlackHole");
+                if(collection.Length == 0)
+                {
+                    Debug.Log("we have 0 balckhole and create one");
+                    var blackHole = this.GetComponent<BlackHoleMaker>().Make();
+                    blackHole.transform.position = new Vector3(this.transform.position.x,
+                        this.transform.position.y / 2, this.transform.position.z);
+                }
+                Debug.Log("we already have a blackhole");
             }
             else if (Spells.Explosion == type)
             {
