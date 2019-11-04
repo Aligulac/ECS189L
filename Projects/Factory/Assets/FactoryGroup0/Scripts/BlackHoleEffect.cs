@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class BlackHoleEffect : MonoBehaviour
 {
-    public float pullForce = 1000;
+    public float pullForce = 1;
     private GameObject[] MeteorCollection;
     private GameObject[] FireBallCollection;
     // Start is called before the first frame update
@@ -35,9 +35,6 @@ public class BlackHoleEffect : MonoBehaviour
             Vector3 attractForce = new Vector3(disVector.normalized.x * pullForce / (Mathf.Pow(dis, 2)), 
                 disVector.normalized.y * pullForce / (Mathf.Pow(dis, 2)),
                 disVector.normalized.z * pullForce / (Mathf.Pow(dis, 2)));
-            Vector3 attractForce2 = new Vector3(disVector.normalized.x * pullForce / dis,
-                disVector.normalized.y * pullForce /dis,
-                disVector.normalized.z * pullForce /dis);
            // Debug.Log("Force: " + attractForce);
             rigidBody.AddForce(attractForce, ForceMode.Impulse);
         }
